@@ -398,14 +398,16 @@
         </svg>
         <p class="dialog-paragraph">Вставьте дискету, чтобы продолжить</p>
       </div>
-      <button
-        type="button" 
-        onclick="window['dialog-id'].close()" 
-        aria-controls="dialog-id"
-        class="button dialog-button"
-      >
-        <span class="button__text">ОК</span>
-      </button>
+      <form method="dialog">
+        <button
+          type="button" 
+          onclick="window['dialog-id'].close()" 
+          aria-controls="dialog-id"
+          class="button dialog-button"
+        >
+          <span class="button__text">ОК</span>
+        </button>
+      </form>
     </dialog>
   </main>
   <script src="./scripts/like.js"></script>
