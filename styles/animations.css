@@ -12,3 +12,88 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes arrow {
+  from {
+    margin-left: -20px;
+  }
+
+  50% {
+    margin-left: -16px;
+  }
+
+  to {
+    margin-left: -20px;
+  }
+}
+
+@keyframes heart-scale-animation {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks-opacity-animation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body,
+.like-icon:hover .core {
+  fill: var(--heart-color, #000);
+  transition: fill 0.5s linear;
+}
+
+.like-icon:active .main-body,
+.like-icon:active .core {
+  fill: #f00;
+  transition: fill 0.5s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: #f00;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #f00;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: #f00;
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart-scale-animation 2 0.3s 0.1s alternate ease-in;
+  animation-name: heart-scale-animation;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity-animation 2 0.3s 0.3s alternate ease-in;
+  animation-name: sparks-opacity-animation;
+}
